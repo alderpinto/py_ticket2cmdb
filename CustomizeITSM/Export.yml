@@ -1,0 +1,43 @@
+---
+Debugger:
+  DebugThreshold: debug
+  TestMode: '0'
+Description: ''
+FrameworkVersion: 6.0.16
+Provider:
+  Operation:
+    Session::SessionCreate:
+      Description: ''
+      IncludeTicketData: '0'
+      Type: Session::SessionCreate
+    Ticket::TicketGet:
+      Description: ''
+      IncludeTicketData: '0'
+      Type: Ticket::TicketGet
+    Ticket::TicketSearch:
+      Description: ''
+      IncludeTicketData: '0'
+      Type: Ticket::TicketSearch
+  Transport:
+    Config:
+      AdditionalHeaders: ~
+      KeepAlive: ''
+      MaxLength: '9999999999'
+      RouteOperationMapping:
+        Session::SessionCreate:
+          RequestMethod:
+          - POST
+          Route: /SessionCreate
+        Ticket::TicketGet:
+          RequestMethod:
+          - POST
+          Route: /Ticket
+        Ticket::TicketSearch:
+          RequestMethod:
+          - POST
+          Route: /TicketSearch
+    Type: HTTP::REST
+RemoteSystem: ''
+Requester:
+  Transport:
+    Type: ''

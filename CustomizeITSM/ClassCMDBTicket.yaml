@@ -1,0 +1,507 @@
+---
+- Key: Responsible
+  Name: Responsible
+  Searchable: 1
+  Input:
+    Type: Text
+    Size: 255
+    MaxLength: 255
+- Key: StateID
+  Name: StateID
+  Searchable: 1
+  Input:
+    Type: Integer
+    ValueMin: 1
+    ValueMax: 1000
+    ValueDefault: 1
+- Key: PriorityID
+  Name: PriorityID
+  Searchable: 1
+  Input:
+    Type: Integer
+    ValueMin: 1
+    ValueMax: 1000
+    ValueDefault: 1
+- Key: ResponsibleID
+  Name: ResponsibleID
+  Searchable: 1
+  Input:
+    Type: Integer
+    ValueMin: 1
+    ValueMax: 1000
+    ValueDefault: 1
+- Key: SLAID
+  Name: SLAID
+  Searchable: 1
+  Input:
+    Type: Integer
+    ValueMin: 1
+    ValueMax: 1000
+    ValueDefault: 1
+- Key: CustomerUserID
+  Name: CustomerUserID
+  Searchable: 1
+  Input:
+    Type: Text
+    Size: 255
+    MaxLength: 255
+- Key: Closed
+  Name: Closed
+  Searchable: 1
+  Input:
+    Type: Date
+    Required: 1
+    YearPeriodPast: 20
+    YearPeriodFuture: 10
+- Key: Queue
+  Name: Queue
+  Searchable: 1
+  Input:
+    Type: Text
+    Size: 255
+    MaxLength: 255
+- Key: ServiceID
+  Name: ServiceID
+  Searchable: 1
+  Input:
+    Type: Text
+    Size: 255
+    MaxLength: 255
+- Key: Owner
+  Name: Owner
+  Searchable: 1
+  Input:
+    Type: Text
+    Size: 255
+    MaxLength: 255
+- Key: RealTillTimeNotUsed
+  Name: RealTillTimeNotUsed
+  Searchable: 1
+  Input:
+    Type: Text
+    Size: 255
+    MaxLength: 255
+- Key: EscalationTime
+  Name: EscalationTime
+  Searchable: 1
+  Input:
+    Type: Text
+    Size: 255
+    MaxLength: 255
+- Key: SolutionInMin
+  Name: SolutionInMin
+  Searchable: 1
+  Input:
+    Type: Text
+    Size: 255
+    MaxLength: 255
+- Key: EscalationResponseTime
+  Name: EscalationResponseTime
+  Searchable: 1
+  Input:
+    Type: Text
+    Size: 255
+    MaxLength: 255
+- Key: ArchiveFlag
+  Name: ArchiveFlag
+  Searchable: 1
+  Input:
+    Type: Text
+    Size: 255
+    MaxLength: 255
+- Key: TicketNumber
+  Name: TicketNumber
+  Searchable: 1
+  Input:
+    Type: Text
+    Size: 255
+    MaxLength: 255
+- Key: StateType
+  Name: StateType
+  Searchable: 1
+  Input:
+    Type: Text
+    Size: 255
+    MaxLength: 255
+- Key: FirstLock
+  Name: FirstLock
+  Searchable: 1
+  Input:
+    Type: Date
+    Required: 1
+    YearPeriodPast: 20
+    YearPeriodFuture: 10
+- Key: TimeUnit
+  Name: TimeUnit
+  Searchable: 1
+  Input:
+    Type: Text
+    Size: 255
+    MaxLength: 255
+- Key: Lock
+  Name: Lock
+  Searchable: 1
+  Input:
+    Type: Text
+    Size: 255
+    MaxLength: 255
+- Key: Title
+  Name: Title
+  Searchable: 1
+  Input:
+    Type: Text
+    Size: 255
+    MaxLength: 255
+- Key: EscalationUpdateTime
+  Name: EscalationUpdateTime
+  Searchable: 1
+  Input:
+    Type: Text
+    Size: 255
+    MaxLength: 255
+- Key: ChangeBy
+  Name: ChangeBy
+  Searchable: 1
+  Input:
+    Type: Text
+    Size: 255
+    MaxLength: 255
+- Key: CreateBy
+  Name: CreateBy
+  Searchable: 1
+  Input:
+    Type: Text
+    Size: 255
+    MaxLength: 255
+- Key: UntilTime
+  Name: UntilTime
+  Searchable: 1
+  Input:
+    Type: Text
+    Size: 255
+    MaxLength: 255
+- Key: LockID
+  Name: LockID
+  Searchable: 1
+  Input:
+    Type: Text
+    Size: 255
+    MaxLength: 255
+- Key: Priority
+  Name: Priority
+  Searchable: 1
+  Input:
+    Type: Text
+    Size: 255
+    MaxLength: 255
+- Key: OwnerID
+  Name: OwnerID
+  Searchable: 1
+  Input:
+    Type: Text
+    Size: 255
+    MaxLength: 255
+- Key: EscalationSolutionTime
+  Name: EscalationSolutionTime
+  Searchable: 1
+  Input:
+    Type: Text
+    Size: 255
+    MaxLength: 255
+- Key: Age
+  Name: Age
+  Searchable: 1
+  Input:
+    Type: Text
+    Size: 255
+    MaxLength: 255
+- Key: TicketID
+  Name: TicketID
+  Searchable: 1
+  Input:
+    Type: Text
+    Size: 255
+    MaxLength: 255
+- Key: TypeID
+  Name: TypeID
+  Searchable: 1
+  Input:
+    Type: Text
+    Size: 255
+    MaxLength: 255
+- Key: Lock
+  Name: Lock
+  Searchable: 1
+  Input:
+    Type: Text
+    Size: 255
+    MaxLength: 255
+- Key: QueueID
+  Name: QueueID
+  Searchable: 1
+  Input:
+    Type: Text
+    Size: 255
+    MaxLength: 255
+- Key: State
+  Name: State
+  Searchable: 1
+  Input:
+    Type: Text
+    Size: 255
+    MaxLength: 255
+- Key: Type
+  Name: Type
+  Searchable: 1
+  Input:
+    Type: Text
+    Size: 255
+    MaxLength: 255
+- Key: GroupID
+  Name: GroupID
+  Searchable: 1
+  Input:
+    Type: Text
+    Size: 255
+    MaxLength: 255
+- Key: Created
+  Name: Created
+  Searchable: 1
+  Input:
+    Type: Date
+    Required: 1
+    YearPeriodPast: 20
+    YearPeriodFuture: 10
+- Key: Changed
+  Name: Changed
+  Searchable: 1
+  Input:
+    Type: Date
+    Required: 1
+    YearPeriodPast: 20
+    YearPeriodFuture: 10
+- Key: CustomerID
+  Name: CustomerID
+  Searchable: 1
+  Input:
+    Type: Text
+    Size: 255
+    MaxLength: 255
+- Key: UnlockTimeout
+  Name: UnlockTimeout
+  Searchable: 1
+  Input:
+    Type: Text
+    Size: 255
+    MaxLength: 255
+- Key: ArticleID
+  Name: ArticleID
+  Searchable: 1
+  Input:
+    Type: Text
+    Size: 255
+    MaxLength: 255
+  Sub:
+    - Key: MimeType
+      Name: MimeType
+      Searchable: 1
+      Input:
+        Type: Text
+        Size: 255
+        MaxLength: 255
+    - Key: CreateTime
+      Name: CreateTime
+      Searchable: 1
+      Input:
+        Type: Date
+        Required: 1
+        YearPeriodPast: 20
+        YearPeriodFuture: 10
+    - Key: ChangeTime
+      Name: ChangeTime
+      Searchable: 1
+      Input:
+        Type: Date
+        Required: 1
+        YearPeriodPast: 20
+        YearPeriodFuture: 10
+    - Key: To
+      Name: To
+      Searchable: 1
+      Input:
+        Type: Text
+        Size: 255
+        MaxLength: 255
+    - Key: From
+      Name: From
+      Searchable: 1
+      Input:
+        Type: Text
+        Size: 255
+        MaxLength: 255
+    - Key: Bcc
+      Name: Bcc
+      Searchable: 1
+      Input:
+        Type: Text
+        Size: 255
+        MaxLength: 255
+    - Key: ContentType
+      Name: ContentType
+      Searchable: 1
+      Input:
+        Type: Text
+        Size: 255
+        MaxLength: 255
+    - Key: ContentCharset
+      Name: ContentCharset
+      Searchable: 1
+      Input:
+        Type: Text
+        Size: 255
+        MaxLength: 255
+    - Key: IncomingTime
+      Name: IncomingTime
+      Searchable: 1
+      Input:
+        Type: Text
+        Size: 255
+        MaxLength: 255
+    - Key: ArticleNumber
+      Name: ArticleNumber
+      Searchable: 1
+      Input:
+        Type: Text
+        Size: 255
+        MaxLength: 255
+    - Key: References
+      Name: References
+      Searchable: 1
+      Input:
+        Type: Text
+        Size: 255
+        MaxLength: 255
+    - Key: Body
+      Name: Body
+      Searchable: 1
+      Input:
+        Type: TextArea
+    - Key: CommunicationChannelID
+      Name: CommunicationChannelID
+      Searchable: 1
+      Input:
+        Type: Text
+        Size: 255
+        MaxLength: 255
+    - Key: ReplyTo
+      Name: ReplyTo
+      Searchable: 1
+      Input:
+        Type: Text
+        Size: 255
+        MaxLength: 255
+    - Key: TimeUnit
+      Name: TimeUnit
+      Searchable: 1
+      Input:
+        Type: Text
+        Size: 255
+        MaxLength: 255
+    - Key: MessageID
+      Name: MessageID
+      Searchable: 1
+      Input:
+        Type: Text
+        Size: 255
+        MaxLength: 255
+    - Key: IsVisibleForCustomer
+      Name: IsVisibleForCustomer
+      Searchable: 1
+      Input:
+        Type: Text
+        Size: 255
+        MaxLength: 255
+    - Key: ChangeBy
+      Name: ChangeBy
+      Searchable: 1
+      Input:
+        Type: Text
+        Size: 255
+        MaxLength: 255
+    - Key: Charset
+      Name: Charset
+      Searchable: 1
+      Input:
+        Type: Text
+        Size: 255
+        MaxLength: 255
+    - Key: CreateBy
+      Name: CreateBy
+      Searchable: 1
+      Input:
+        Type: Text
+        Size: 255
+        MaxLength: 255
+    - Key: SenderType
+      Name: SenderType
+      Searchable: 1
+      Input:
+        Type: Text
+        Size: 255
+        MaxLength: 255
+    - Key: Cc
+      Name: Cc
+      Searchable: 1
+      Input:
+        Type: Text
+        Size: 255
+        MaxLength: 255
+    - Key: InReplyTo
+      Name: InReplyTo
+      Searchable: 1
+      Input:
+        Type: Text
+        Size: 255
+        MaxLength: 255
+    - Key: TicketID
+      Name: TicketID
+      Searchable: 1
+      Input:
+        Type: Text
+        Size: 255
+        MaxLength: 255
+    - Key: Subject
+      Name: Subject
+      Searchable: 1
+      Input:
+        Type: Text
+        Size: 255
+        MaxLength: 255
+    - Key: SenderTypeID
+      Name: SenderTypeID
+      Searchable: 1
+      Input:
+        Type: Text
+        Size: 255
+        MaxLength: 255
+  CountMin: 0
+  CountMax: 999
+  CountDefault: 0
+- Key: DynamicField_Name
+  Name: DynamicField_Name
+  Searchable: 1
+  Input:
+    Type: Text
+    Size: 255
+    MaxLength: 255
+  Sub:
+    - Key: DynamicField_Value
+      Name: DynamicField_Value
+      Searchable: 1
+      Input:
+        Type: Text
+        Size: 255
+        MaxLength: 255
+  CountMin: 0
+  CountMax: 999
+  CountDefault: 0

@@ -1,0 +1,37 @@
+---
+Debugger:
+  DebugThreshold: debug
+  TestMode: '0'
+Description: ''
+FrameworkVersion: 7.0.7
+Provider:
+  Operation:
+    ConfigItem::ConfigItemCreate:
+      Description: ''
+      IncludeTicketData: '0'
+      Type: ConfigItem::ConfigItemCreate
+    ConfigItem::ConfigItemGet:
+      Description: ''
+      IncludeTicketData: '0'
+      Type: ConfigItem::ConfigItemGet
+  Transport:
+    Config:
+      AdditionalHeaders: ~
+      KeepAlive: ''
+      MaxLength: '9999999999'
+      RouteOperationMapping:
+        ConfigItem::ConfigItemCreate:
+          ParserBackend: JSON
+          RequestMethod:
+          - PUT
+          Route: /ConfigItem
+        ConfigItem::ConfigItemGet:
+          ParserBackend: JSON
+          RequestMethod:
+          - POST
+          Route: /ConfigItemGet
+    Type: HTTP::REST
+RemoteSystem: ''
+Requester:
+  Transport:
+    Type: ''
