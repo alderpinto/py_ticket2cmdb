@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Report</title>
+</head>
+<body>
+    <h1>Task Report</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Task ID</th>
+                <th>Status</th>
+                <th>Data</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for task in report_data %}
+                <tr>
+                    <td>{{ task['Task ID'] }}</td>
+                    <td>{{ task['Status'] }}</td>
+                    <td>{{ task['Data'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

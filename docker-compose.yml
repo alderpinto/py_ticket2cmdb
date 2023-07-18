@@ -1,0 +1,53 @@
+version: '3'
+services:
+  redis:
+    image: redis
+    hostname: redis
+    ports:
+      - 6379:6379
+    networks:
+      - docker-znuny-7_default
+
+  worker:
+    build:
+      context: .
+    hostname: celery-worker
+    command: celery -A main worker --loglevel=info
+    depends_on:
+      - redis
+    networks:
+      - docker-znuny-7_default
+
+  api:
+    build:
+      context: .
+    hostname: celery-api
+    command: python api.py
+    ports:
+      - 5000:5000
+    depends_on:
+      - redis
+    networks:
+      - docker-znuny-7_default
+
+  flower:
+    build: ./flower/
+    command: celery -A tasks flower
+    volumes:
+      - ./flower/examples:/data
+    working_dir: /data
+    ports:
+      - 5555:5555
+    environment:
+      CELERY_BROKER_URL: redis://redis:6379/0
+      CELERY_RESULT_BACKEND: redis://redis:6379/0
+    depends_on:
+      - api
+      - worker
+      - redis
+    networks:
+      - docker-znuny-7_default   
+
+networks:
+  docker-znuny-7_default:
+    external: true      
