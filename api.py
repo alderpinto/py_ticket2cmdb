@@ -8,8 +8,8 @@ def trigger_collect_ticket_ids():
     # Obtém os dados da requisição
     request_data = request.get_json()
     # Acessar os dados da requisição
-    ticket_create_date = request_data.get('ticket_create_date')
-    ticket_closed_date = request_data.get('ticket_closed_date')    
+    ticketcreatetime_ini = request_data.get('ticketcreatetime_ini')
+    ticketcreatetime_end = request_data.get('ticketcreatetime_end')    
     auth_to_export = request_data.get('auth_to_export')    
     user_auth_to_import = request_data.get('user_auth_to_import')    
     pass_auth_to_import = request_data.get('pass_auth_to_import')    
@@ -19,8 +19,8 @@ def trigger_collect_ticket_ids():
     #routeget, authget, dtini, dtend, userauthput, pswauthput, routeput, classimp
     task = collect_ticket_ids.delay(endpoint_url_export, 
                                     auth_to_export, 
-                                    ticket_create_date, 
-                                    ticket_closed_date, 
+                                    ticketcreatetime_ini, 
+                                    ticketcreatetime_end, 
                                     user_auth_to_import, 
                                     pass_auth_to_import, 
                                     endpoint_url_import, 
