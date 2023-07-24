@@ -17,7 +17,8 @@ def collect_ticket_ids(self,
                        userauthput, 
                        pswauthput, 
                        routeput, 
-                       classimp):
+                       classimp,
+                       limit):
     try:
         # Coloque o código da tarefa aqui
         url = routeget + 'nph-genericinterface.pl/Webservice/Export/TicketSearch'
@@ -30,7 +31,8 @@ def collect_ticket_ids(self,
             "UserLogin": "root@localhost",
             "Password": "changeme",
             "TicketCreateTimeNewerDate": dtini,
-            "TicketCreateTimeOlderDate": dtend
+            "TicketCreateTimeOlderDate": dtend,
+            "Limit": limit
         }
 
         response = requests.post(url, headers=headers, json=data)
@@ -53,7 +55,38 @@ def collect_ticket_ids(self,
         try:
             self.retry()
         except MaxRetriesExceededError:
-            print("Excedido o número máximo de tentativas")            
+            print("Excedido o número máximo de tentativas")
+
+# Tarefa do Celery para coletar os TicketIDs
+@app.task(bind=True, max_retries=3)
+def process_ticket_ids(self,
+                       ticketids, 
+                       routeget, 
+                       authget,
+                       userauthput, 
+                       pswauthput, 
+                       routeput, 
+                       classimp):
+    try:
+        ticket_ids = ticketids
+
+        # Enviar cada TicketID para a próxima tarefa
+        for ticket_id in ticket_ids:
+            process_ticket_inject.delay(ticket_id, 
+                                        routeget, 
+                                        authget, 
+                                        userauthput, 
+                                        pswauthput, 
+                                        routeput, 
+                                        classimp)
+
+    except (requests.RequestException, ValueError) as exc:
+        print(f"Erro ao coletar tickets: {exc}")
+        sleep(5)  # Tempo de espera antes de tentar novamente
+        try:
+            self.retry()
+        except MaxRetriesExceededError:
+            print("Excedido o número máximo de tentativas")  
 
 # Tarefa do Celery para processar os detalhes do Ticket e enviar uma requisição PUT
 @app.task
