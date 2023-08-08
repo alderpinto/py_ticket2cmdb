@@ -159,7 +159,7 @@ def process_ticket_inject(self,
                 "UserLogin": userauthput,
                 "Password": pswauthput,
                 "ConfigItem": {
-                    "Number": ticket_id,
+                    "Number": "".join([str(100), ticket_id]),
                     "Class": classimp,
                     "Name": ticket_details.get('TicketNumber'),
                     "DeplState": "Production",
